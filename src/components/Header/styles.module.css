@@ -1,0 +1,20 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 90px;
+  background-color: #F0EFFF;
+  color: #333;
+}
+
+.navegacao{
+  display: flex;
+}
+.navegacao > li{
+  margin-left: 8px;
+}
+.navegacao > li > a {
+  color: #333;
+  font-size: 1.2rem;
+}

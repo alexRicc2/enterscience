@@ -1,0 +1,73 @@
+.hero{
+  height: calc(100vh - 90px);
+  display: flex;
+  background-color: #F0EFFF;
+  padding: 0 2rem;
+  background-image: url('../../assets/images/hero3.jpg');
+  background-position: right;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.textoContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 40%; 
+}
+
+.title{  
+  font-size: 5.5rem;
+  text-transform: uppercase;
+  color: #FC9B50;
+  margin-bottom: 1.5rem;
+}
+.subtitle{
+  font-size: 1rem;
+  color: #333;
+  font-weight: normal;
+}
+.descricao{
+  max-width: 400px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.botao{
+  padding: 1rem;
+  background: #8A2387; 
+  background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387); 
+  background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+  align-self: flex-start;
+  
+  color: #F0EFFF;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+@media screen and (max-width:768px){
+  
+  .textoContainer{
+    max-width: 60%;
+  }
+}
+@media screen and (max-width:590px){
+  .hero{
+    background-image: unset;
+  }
+  .textoContainer{
+    max-width: unset;
+  }
+  
+}
+
+@media screen and (max-width:400px){
+  .title{
+    font-size: 4rem;
+  }
+  .descricao{
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+}
