@@ -1,9 +1,9 @@
 .hero{
   height: calc(100vh - 90px);
   display: flex;
-  background-color: #F0EFFF;
+  
   padding: 0 2rem;
-  background-image: url('../../assets/images/hero3.jpg');
+  background-image: url('../../assets/images/hero4.svg');
   background-position: right;
   background-size: 50%;
   background-repeat: no-repeat;

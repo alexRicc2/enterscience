@@ -25,7 +25,7 @@
 .inputContainer{
   display: flex;
 }
-.form > button {
+.button {
   border: none;
   padding: 1rem;
   background: #8A2387; 

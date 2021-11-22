@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { Form } from './components/Form';
+import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
 import './reset.css';
 
 function App() {
@@ -24,12 +25,15 @@ function App() {
       .then(res=>console.log(res.data))
       .catch(err=> console.log(err));
   }
+  function aoEnviarForm(dados) {
+    console.log(dados);
+  }
   return (
     <div>
       <Header/>
       <Hero/>
       <Services/>
-      <Form/>
+      <FormularioCadastro aoEnviar={aoEnviarForm}/>
       <form>
         <input type="text" id="text" 
           onChange={handleText}  
