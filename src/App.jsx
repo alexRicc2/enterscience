@@ -34,6 +34,7 @@ function App() {
         <input type="text" id="text" 
           onChange={handleText}  
           value={text}
+          required
         />
         <button id="submit" type="submit"
           onClick={handleSubmit}
