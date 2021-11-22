@@ -19,7 +19,7 @@
 .title{  
   font-size: 5.5rem;
   text-transform: uppercase;
-  color: #FC9B50;
+  color: #6C63FF;
   margin-bottom: 1.5rem;
 }
 .subtitle{
@@ -36,9 +36,10 @@
 
 .botao{
   padding: 1rem;
-  background: #8A2387; 
-  background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387); 
-  background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+  background: #6c63ff;
+  background: -webkit-linear-gradient(to right, #4A00E0, #6c63ff);
+  background: linear-gradient(to right, #4A00E0, #6c63ff); 
+
   align-self: flex-start;
   cursor: pointer;
   color: #F0EFFF;

@@ -60,9 +60,9 @@ function DadosUsuario({ proximo, anterior }) {
         variant="outlined"
         margin="normal"
         fullWidth />
-      <Button type="submit" variant="contained" color="primary">
+      <button type="submit" className={styles.button}>
         Finaliza Cadastro
-      </Button>
+      </button>
     </form></>
   );
 }

@@ -26,15 +26,15 @@ export default function Finalizado(){
     formData.append("estado", estado);
     formData.append("login", login);
     formData.append("senha", senha);
-    const url = "http://localhost:80/react-backend/"
-    console.log(formData);
+    const url = "http://localhost:80/react-backend/" //Local
+    //https://enterscience.herokuapp.com/  //Heroku
     axios.post(url, formData)
       .then(res=>console.log(res.data))
       .catch(err=> console.log(err));
 
   return(
-    <div className={styles.form}>
-    <h2>Obrigado {nome} seu cadastro foi concluido</h2>
+    <div className={styles.form} id="form">
+    <h2 className={styles.mensagem}>Obrigado <strong className={styles.strong}>{nome}</strong>, seu cadastro foi concluido!</h2>
     <img src={confirmed} />
     </div>
   )

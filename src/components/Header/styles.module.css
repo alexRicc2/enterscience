@@ -6,7 +6,10 @@
   height: 90px;
   color: #333;
 }
-
+.logo{
+  width: 90px;
+  height: 90px;
+}
 .navegacao{
   display: flex;
 }

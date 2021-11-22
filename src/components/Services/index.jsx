@@ -9,12 +9,12 @@ import styles from './styles.module.css';
 
 export function Services (){
   return(
-    <section>
+    <section id="services">
       <h2 className={styles.title}>Nossos servicos</h2>
       <ul className={styles.listaServicos}>
         <li className={styles.item}>
           <BuildIcon/>
-          <h3 className={styles.itemTitle}>Repararo</h3>
+          <h3 className={styles.itemTitle}>Reparo</h3>
           <p className={styles.itemText}>Na nossa compania voce repara seu smartphone sem preocupações</p>
         </li>
         <li className={styles.item}>
@@ -34,12 +34,12 @@ export function Services (){
         </li>
         <li className={styles.item}>
           <BuildIcon/>
-          <h3 className={styles.itemTitle}>Repararo</h3>
+          <h3 className={styles.itemTitle}>Reparo</h3>
           <p className={styles.itemText}>Na nossa compania voce repara seu smartphone sem preocupações</p>
         </li>
         <li className={styles.item}>
           <BuildIcon/>
-          <h3 className={styles.itemTitle}>Repararo</h3>
+          <h3 className={styles.itemTitle}>Reparo</h3>
           <p className={styles.itemText}>Na nossa compania voce repara seu smartphone sem preocupações</p>
         </li>
       </ul>

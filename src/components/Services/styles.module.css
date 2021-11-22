@@ -4,7 +4,7 @@
   text-transform: capitalize;
   margin: 2rem 0;
   font-size: 2.5rem;
-  color: #b128ac;
+  color: #6C63FF;
 }
 .listaServicos{
   display: flex;
@@ -35,7 +35,7 @@
 }
 .item > svg{
   font-size: 3rem;
-  color: #b128ac;
+  color: #6C63FF;
   margin: 1rem 0;
 }
 

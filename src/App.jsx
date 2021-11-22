@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
 import { DadosProvider } from './hooks/Dados';
+import { Footer } from './components/Footer';
 import './reset.css';
 
 function App() {
@@ -10,14 +11,15 @@ function App() {
   
   
   return (
-    <div>
+    <>
       <DadosProvider>      
       <Header/>
       <Hero/>
       <Services/>
       <FormularioCadastro />
       </DadosProvider>
-    </div>
+      <Footer/>
+    </>
   )
 }
 

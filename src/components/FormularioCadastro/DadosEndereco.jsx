@@ -4,7 +4,7 @@ import styles from '../Form/styles.module.css';
 import useCep from "react-hook-usecep";
 import { useDados } from "../../hooks/Dados";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-function DadosEntrega({ validacoes, proximo, anterior }) {
+function DadosEndereco({ validacoes, proximo, anterior }) {
 
   const [status, setCepApi] = useCep();
 
@@ -127,4 +127,4 @@ function DadosEntrega({ validacoes, proximo, anterior }) {
   );
 }
 
-export default DadosEntrega;
+export default DadosEndereco;
