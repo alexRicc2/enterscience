@@ -13,7 +13,8 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-hook-usecep": "^1.0.6",
-    "react-hooks-helper": "^1.6.0"
+    "react-hooks-helper": "^1.6.0",
+    "react-scroll": "^1.8.4"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.0",

@@ -25,7 +25,7 @@ function DadosUsuario({ proximo, anterior }) {
 
   return (
     <>
-    <form className={styles.form}
+    <form className={styles.form} id="form"
       autoComplete="false" onSubmit={(event) => {
         event.preventDefault()
         if(possoEnviar())proximo()

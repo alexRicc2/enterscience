@@ -40,7 +40,7 @@
   background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387); 
   background: linear-gradient(to right, #F27121, #E94057, #8A2387);
   align-self: flex-start;
-  
+  cursor: pointer;
   color: #F0EFFF;
   font-weight: bold;
   border-radius: 10px;

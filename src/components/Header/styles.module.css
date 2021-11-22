@@ -15,4 +15,5 @@
 }
 .navegacao > li > a {
   color: #333;
+  cursor: pointer;
 }
