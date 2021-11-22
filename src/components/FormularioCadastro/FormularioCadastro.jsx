@@ -4,29 +4,19 @@ import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
 import { validacoes } from "./validacoes";
 import { Typography, Stepper, Step, StepLabel } from "@material-ui/core";
-import { useForm, useStep } from 'react-hooks-helper';
+import styles from '../Form/styles.module.css';
+import Finalizado from './Finalizado'
 
 function FormularioCadastro({ aoEnviar }) {
   const [etapaAtual, setEtapaAtual] = useState(0);
 
-  const defaultData = {
-    nome: '',
-    email: '',
-    dataNascimento: '',
-    cpf: '',
-    sexo: '',
-    telefone: '',
-    senha1: '',
-    senha2: ''
-  }
-  const [FormData, setForm] = useForm(defaultData);
-  const props = { FormData, setForm, validacoes, proximo, anterior}
+  const props = { FormData, validacoes, proximo, anterior}
 
   const formularios = [
     <DadosPessoais {...props} />,
-    <DadosUsuario {...props} />,
     <DadosEntrega {...props} />,
-    <Typography variant="h5">Obrigado pelo Cadastro!</Typography>,
+    <DadosUsuario {...props} />,
+    <Finalizado/>,
   ];
 
   
@@ -38,7 +28,7 @@ function FormularioCadastro({ aoEnviar }) {
   }
   return (
     <>
-      <Stepper activeStep={etapaAtual} >
+      <Stepper activeStep={etapaAtual} className={styles.stepper} alternativeLabel>
         <Step>
           <StepLabel>Dados Pessoais</StepLabel>
         </Step>

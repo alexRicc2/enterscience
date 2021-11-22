@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import { TextField} from "@material-ui/core";
 import MenuItem from '@material-ui/core/MenuItem';
 import styles from '../Form/styles.module.css'
-function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
+import {useDados} from '../../hooks/Dados'
+function DadosPessoais({  validacoes, proximo }) {
 
-  const { nome , email, cpf, telefone, dataNascimento, sexo } = FormData;
   
-  const opcoes = [
+  const {
+    nome, setNome,
+    email, setEmail,
+    cpf, setCpf,
+    telefone, setTelefone,
+    dataNascimento, setDataNascimento,
+    sexo, setSexo
+  } = useDados();
+  
+  const opcoes=[
     {
       value: "Masculino"
     },
@@ -17,13 +26,7 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
       value: "Não identificado"
     }
   ]
-  const [sexo2, setSexo2] = useState('Masculino')
-  function possoEnviar(){
-    for(let campo in erros){
-      if(!erros[campo].valido)return false
-    }
-    return true
-  }
+
   const [erros, setErros] = useState(
     {
       nome: { valido: true, texto: "" },
@@ -32,10 +35,15 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
       telefone: { valido: true, texto: "" }
     }) 
   
-    const handleChange = (e) => {
-    setSexo2(e.target.value);
-    sexo = e.target.value
+  function possoEnviar(){
+    for(let campo in erros){
+      if(!erros[campo].valido)return false
+    }
+    return true
   }
+    const handleChange = (e) => {
+    setSexo(e.target.value);
+    }
   
   return (
     <form className={styles.form}
@@ -43,7 +51,7 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
       event.preventDefault()
       if(possoEnviar())proximo()
     }}
-    >
+      >
        <TextField
           type="email"
           id="outlined-basic"
@@ -51,7 +59,9 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
           variant="outlined"
           name="email"
           value={email}
-          onChange={setForm}
+          onChange={(e)=>{
+            setEmail(e.target.value)
+          }}
           required
           margin="normal"
           error={!erros.email.valido}
@@ -69,7 +79,9 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
           variant="outlined"
           name="nome"
           value={nome}
-          onChange={setForm}
+          onChange={(e)=>{
+            setNome(e.target.value)
+          }}
           required
           margin="normal"
           error={!erros.nome.valido}
@@ -86,7 +98,9 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
           variant="outlined"
           name="dataNascimento"
           value={dataNascimento}
-          onChange={setForm}
+          onChange={(e)=>{
+            setDataNascimento(e.target.value)
+          }}
           required
           margin="normal"
            />
@@ -97,7 +111,9 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
           variant="outlined"
           name="cpf"
           value={cpf}
-          onChange={setForm}
+          onChange={(e)=>{
+            setCpf(e.target.value)
+          }}
           error={!erros.cpf.valido}
           helperText={erros.cpf.texto}
           required
@@ -115,7 +131,9 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
           variant="outlined"
           name="telefone"
           value={telefone}
-          onChange={setForm}
+          onChange={(e)=>{
+            setTelefone(e.target.value)
+          }}
           required
           margin="normal"
           helperText={erros.telefone.texto}
@@ -131,7 +149,7 @@ function DadosPessoais({ FormData, setForm, validacoes, proximo }) {
           id="standard-select-currency"
           select
           label="sexo"
-          value={sexo2}
+          value={sexo}
           onChange={handleChange}
           helperText="Por favor selecione o seu sexo"
           variant="outlined"

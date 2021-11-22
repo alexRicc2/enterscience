@@ -1,43 +1,55 @@
 import React, { useState, useContext } from "react";
 import { TextField, Button } from "@material-ui/core";
-import ValidacoesCadastro from "../../contexts/ValidacoesCadastro";
-import useErros from "../../hooks/useErros";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import {useDados} from '../../hooks/Dados';
+import styles from '../Form/styles.module.css';
+function DadosUsuario({ proximo, anterior }) {
+  
+  const {
+    login, setLogin,
+    senha, setSenha
+  } = useDados();
 
-function DadosUsuario({ aoEnviar }) {
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const validacoes = useContext(ValidacoesCadastro)
-  const [erros, validarCampos, possoEnviar] = useErros(validacoes);
+  const [erros, setErros] = useState(
+    {
+      login: { valido: true, texto: "" },
+      senha: { valido: true, texto: "" },
+    }) 
+
+  function possoEnviar(){
+    for(let campo in erros){
+      if(!erros[campo].valido)return false
+    }
+    return true
+  }
 
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        if (possoEnviar()) {
-          aoEnviar({ email, senha });
-        }
+    <>
+    <form className={styles.form}
+      autoComplete="false" onSubmit={(event) => {
+        event.preventDefault()
+        if(possoEnviar())proximo()
       }}
     >
+      <ArrowBackIcon onClick={anterior}>Voltar</ArrowBackIcon>
       <TextField
-        value={email}
+        value={login}
         onChange={(event) => {
-          setEmail(event.target.value);
-        }}
-        id="email"
-        name="email"
-        label="email"
-        type="email"
+          setLogin(event.target.value);
+        } }
+        id="login"
+        name="login"
+        label="Login"
+        type="text"
         required
         variant="outlined"
         margin="normal"
-        fullWidth
-      />
+        fullWidth />
       <TextField
         value={senha}
         onChange={(event) => {
           setSenha(event.target.value);
-        }}
-        onBlur={validarCampos}
+        } }
         error={!erros.senha.valido}
         helperText={erros.senha.texto}
         id="senha"
@@ -47,12 +59,11 @@ function DadosUsuario({ aoEnviar }) {
         required
         variant="outlined"
         margin="normal"
-        fullWidth
-      />
+        fullWidth />
       <Button type="submit" variant="contained" color="primary">
-        Próximo
+        Finaliza Cadastro
       </Button>
-    </form>
+    </form></>
   );
 }
 
