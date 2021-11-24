@@ -16,8 +16,6 @@ function DadosProvider({children}){
   const [complemento, setComplemento] = useState('');
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
-  const [login, setLogin] = useState('');
-  const [senha, setSenha] = useState('');
 
   return(
     <DadosContext.Provider value={{
@@ -33,8 +31,7 @@ function DadosProvider({children}){
       complemento, setComplemento,
       cidade, setCidade,
       estado, setEstado,
-      login, setLogin,
-      senha, setSenha,
+      
     }}>
     {children}
     </DadosContext.Provider>

@@ -24,8 +24,6 @@ export default function Finalizado(){
     formData.append("complemento", complemento);
     formData.append("cidade", cidade);
     formData.append("estado", estado);
-    formData.append("login", login);
-    formData.append("senha", senha);
     const url = "http://localhost:80/react-backend/" //Local
     //https://enterscience.herokuapp.com/  //Heroku
     axios.post(url, formData)
