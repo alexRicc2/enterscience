@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TextField } from "@material-ui/core";
-import styles from '../Form/styles.module.css';
+import styles from './styles.module.css';
 import useCep from "react-hook-usecep";
 import { useDados } from "../../hooks/Dados";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -37,6 +37,7 @@ function DadosEndereco({ validacoes, proximo, anterior }) {
       cep: { valido: true, texto: "" },
       rua: { valido: true, texto: "" },
       cidade: { valido: true, texto: "" },
+      estado: { valido: true, texto: ""},
       numero: { valido: true, texto: "" }
   })
 
@@ -51,6 +52,7 @@ function DadosEndereco({ validacoes, proximo, anterior }) {
     >
       <ArrowBackIcon onClick={anterior}>Voltar</ArrowBackIcon>
       <TextField
+        required
         value={cep}
         onChange={(e) => {
           setCep(e.target.value);
@@ -64,7 +66,9 @@ function DadosEndereco({ validacoes, proximo, anterior }) {
         onBlur={(e) => {
           setCepApi(e.target.value);
         } } />
+
       <TextField
+        required
         value={cidade}
         onChange={(e) => {
           setCidade(e.target.value);
@@ -75,8 +79,17 @@ function DadosEndereco({ validacoes, proximo, anterior }) {
         type="text"
         variant="outlined"
         margin="normal"
+        error={!erros.cidade.valido}
+        helperText={erros.cidade.texto}
+        onBlur={() => {
+          const ehValido = validacoes.validaCidade(cidade)
+          setErros(erros => ({
+            ...erros, cidade: ehValido
+          }))
+        }}
         fullWidth />
       <TextField
+        required
         value={estado}
         onChange={(e) => {
           setEstado(e.target.value);
@@ -86,8 +99,18 @@ function DadosEndereco({ validacoes, proximo, anterior }) {
         label="Estado"
         type="text"
         variant="outlined"
-        margin="normal" />
+        margin="normal"
+        error={!erros.estado.valido}
+        helperText={erros.estado.texto}
+        onBlur={() => {
+          const ehValido = validacoes.validaEstado(estado)
+          setErros(erros => ({
+            ...erros, estado: ehValido
+          }))
+        }}
+        />
       <TextField
+        required
         value={rua}
         onChange={(e) => {
           setRua(e.target.value);
@@ -99,6 +122,7 @@ function DadosEndereco({ validacoes, proximo, anterior }) {
         variant="outlined"
         margin="normal" />
       <TextField
+        required
         value={numero}
         onChange={(e) => {
           setNumero(e.target.value);
@@ -109,7 +133,8 @@ function DadosEndereco({ validacoes, proximo, anterior }) {
         type="number"
         variant="outlined"
         margin="normal" />
-      <TextField
+      <TextField 
+        
         value={complemento}
         onChange={(e) => {
           setComplemento(e.target.value);

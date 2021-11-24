@@ -1,0 +1,67 @@
+
+.title{
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #6c63ff;
+}
+.mensagem{
+  margin: 2rem 0;
+}
+.strong{
+  text-align: center;
+  font-size: 1.5rem;
+  color: #6c63ff;
+}
+.sectionForm{
+  margin: 50px 0;
+}
+.stepper{
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  
+}
+.form > label{
+  font-size: 1.4rem;
+}
+.input{
+  padding: 10px;
+  margin-bottom: .7rem;
+}
+.inputContainer{
+  display: flex;
+}
+.button {
+  border: none;
+  padding: 1rem;
+  background: #6c63ff;
+  background: -webkit-linear-gradient(to right, #4A00E0, #6c63ff);
+  background: linear-gradient(to right, #4A00E0, #6c63ff); 
+  font-size: 1.3rem;  
+  color: #F0EFFF;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.button:hover{
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+@media screen and (max-width:480px) {
+  .form{
+    width: 90%;
+  }
+  .inputContainer{
+    flex-direction: column;
+  }
+  .inputContainer > div {
+    display: flex;
+    flex-direction: column;
+  }
+}

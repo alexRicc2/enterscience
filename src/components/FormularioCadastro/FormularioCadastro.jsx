@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import DadosPessoais from "./DadosPessoais";
-import DadosUsuario from "./DadosUsuario";
 import DadosEndereco from "./DadosEndereco";
 import { validacoes } from "./validacoes";
 import { Stepper, Step, StepLabel } from "@material-ui/core";
-import styles from '../Form/styles.module.css';
+import styles from './styles.module.css';
 import Finalizado from './Finalizado'
 
-function FormularioCadastro({ aoEnviar }) {
+function FormularioCadastro() {
   const [etapaAtual, setEtapaAtual] = useState(0);
 
   const props = { FormData, validacoes, proximo, anterior}
@@ -15,7 +14,6 @@ function FormularioCadastro({ aoEnviar }) {
   const formularios = [
     <DadosPessoais {...props} />,
     <DadosEndereco {...props} />,
-    <DadosUsuario {...props} />,
     <Finalizado/>,
   ];
 
@@ -35,9 +33,7 @@ function FormularioCadastro({ aoEnviar }) {
         <Step>
           <StepLabel>Endereço</StepLabel>
         </Step>
-        <Step>
-          <StepLabel>Login</StepLabel>
-        </Step>
+        
         <Step>
           <StepLabel>Finalização</StepLabel>
         </Step>

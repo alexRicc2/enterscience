@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDados } from '../../hooks/Dados';
 import confirmed from '../../assets/images/confirmed.svg'
-import styles from '../Form/styles.module.css';
+import styles from './styles.module.css';
 import axios from 'axios';
 export default function Finalizado(){
 

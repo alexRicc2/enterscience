@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import MenuItem from '@material-ui/core/MenuItem';
-import styles from '../Form/styles.module.css'
+import styles from './styles.module.css'
 import { useDados } from '../../hooks/Dados'
 function DadosPessoais({ validacoes, proximo }) {
-
 
   const {
     nome, setNome,
@@ -26,13 +25,12 @@ function DadosPessoais({ validacoes, proximo }) {
       value: "Não identificado"
     }
   ]
-
+  //validacoes somente nos campos obrigatorios
   const [erros, setErros] = useState(
     {
       nome: { valido: true, texto: "" },
       email: { valido: true, texto: "" },
       cpf: { valido: true, texto: "" },
-      telefone: { valido: true, texto: "" }
     })
 
   function possoEnviar() {
@@ -101,7 +99,6 @@ function DadosPessoais({ validacoes, proximo }) {
         onChange={(e) => {
           setDataNascimento(e.target.value)
         }}
-        required
         margin="normal"
       />
       <TextField
@@ -134,16 +131,9 @@ function DadosPessoais({ validacoes, proximo }) {
         onChange={(e) => {
           setTelefone(e.target.value)
         }}
-        required
         margin="normal"
-        helperText={erros.telefone.texto}
-        error={!erros.telefone.valido}
-        onBlur={() => {
-          const ehValido = validacoes.validaTell(telefone)
-          setErros(erros => ({
-            ...erros, cell: ehValido
-          }))
-        }} />
+        
+         />
 
       <TextField
         id="standard-select-currency"

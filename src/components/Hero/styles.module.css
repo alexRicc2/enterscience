@@ -39,14 +39,16 @@
   background: #6c63ff;
   background: -webkit-linear-gradient(to right, #4A00E0, #6c63ff);
   background: linear-gradient(to right, #4A00E0, #6c63ff); 
-
   align-self: flex-start;
   cursor: pointer;
   color: #F0EFFF;
   font-weight: bold;
   border-radius: 10px;
 }
-
+.botao:hover{
+  transform: scale(1.05);
+  transition: 0.1s;
+}
 @media screen and (max-width:768px){
   
   .textoContainer{

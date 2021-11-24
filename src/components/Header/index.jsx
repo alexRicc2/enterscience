@@ -7,8 +7,8 @@ export function Header(){
     <header className={styles.header}>
       <img src={logo} className={styles.logo}/>
       <ul className={styles.navegacao}>
-        <li><Link to="services" smooth={true}>Services</Link></li>
-        <li><Link to="form" smooth={true}>Cadastro</Link></li>
+        <li><Link to="services" smooth={true} className={styles.link}>Services</Link></li>
+        <li><Link to="form" smooth={true} className={styles.link}>Cadastro</Link></li>
       </ul>
     </header>
   )

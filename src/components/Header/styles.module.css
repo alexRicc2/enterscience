@@ -16,7 +16,11 @@
 .navegacao > li{
   margin-left: 8px;
 }
-.navegacao > li > a {
+.link{
   color: #333;
   cursor: pointer;
+  font-weight: bold;
+}
+.link:hover{
+  color: #666;
 }
