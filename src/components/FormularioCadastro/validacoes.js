@@ -1,7 +1,7 @@
 
 const validaCpf = function(cpf){
   if(cpf.length !== 11){
-    return {valido: false, texto: "Deve conter 11 dígitos"}
+    return {valido: false, texto: "Deve conter 11 dígitos Ex: 11122233344"}
   }
   return {valido: true, texto: ""}
 }
