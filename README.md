@@ -1,5 +1,7 @@
 ## Enterscience challenge
 
+<img src="./src/assets/images/Capture.jpg" width="100%">
+
 ### Requisitos
 
 - xampp
