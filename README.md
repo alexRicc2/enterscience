@@ -22,3 +22,5 @@ link do site: https://enterscience.vercel.app/
 site em uso: https://youtu.be/-Pk4DaL7378
 <br>
 A pasta react-backend contendo o index.php deve ser colocada dentro da pasta htdocs do xampp, para que o servidor possa ser rodado localmente.
+<br>
+Mudando com ssh personal
